@@ -1,8 +1,12 @@
 import { Cloud } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ offset = false }: { offset?: boolean }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-cyan-400/20 bg-[#0b0b14]/85 backdrop-blur-md">
+    <header
+      className={`fixed inset-x-0 ${
+        offset ? "top-10" : "top-0"
+      } z-50 border-b-2 border-cyan-400/20 bg-[#0b0b14]/85 backdrop-blur-md`}
+    >
       <nav className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <a href="#top" className="flex items-center gap-2">
