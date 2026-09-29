@@ -8,6 +8,8 @@ import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
 export default function ProductDrop({ blok }: { blok: any }) {
+  const k75 = blok.body?.find((b: any) => b.component === "K75 Content");
+
   return (
     <main
       className="min-h-screen bg-neutral-950"
@@ -15,19 +17,21 @@ export default function ProductDrop({ blok }: { blok: any }) {
     >
       <Navbar />
 
-      <Hero
-        availability={blok.availability_status}
-        launchMessage={blok.launch_text}
-        ctaText={blok.cta_text}
-      />
+      <div {...(k75 ? storyblokEditable(k75) : {})}>
+        <Hero
+          availability={k75?.availability}
+          launchMessage={k75?.launch_message}
+          ctaText={k75?.cta_text}
+        />
+      </div>
 
       <FeatureGrid />
       <ProductDetails />
       <FAQ />
 
       <FinalCTA
-        launchMessage={blok.launch_text}
-        ctaText={blok.cta_text}
+        launchMessage={k75?.launch_message}
+        ctaText={k75?.cta_text}
       />
 
       <Footer />
