@@ -1,19 +1,16 @@
 import { ArrowRight } from "lucide-react";
 
 type FinalCTAProps = {
-  launchText: string;
+  launchMessage: string;
   ctaText: string;
 };
 
 export default function FinalCTA({
-  launchText,
+  launchMessage,
   ctaText,
 }: FinalCTAProps) {
   return (
-    <section
-      id="waitlist"
-      className="relative overflow-hidden border-t-2 border-cyan-400/10 py-28"
-    >
+    <section id="waitlist" className="relative overflow-hidden border-t-2 border-cyan-400/10 py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[320px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-600/15 blur-[120px]"
@@ -21,7 +18,7 @@ export default function FinalCTA({
 
       <div className="container text-center">
         <p className="mb-6 font-pixel text-[10px] uppercase tracking-[0.2em] text-fuchsia-400 text-glow-fuchsia sm:text-xs">
-          {launchText}
+          {launchMessage}
         </p>
 
         <h2 className="mx-auto max-w-2xl font-pixel text-2xl leading-[1.5] text-white text-glow-cyan sm:text-3xl sm:leading-[1.4]">
@@ -29,11 +26,10 @@ export default function FinalCTA({
         </h2>
 
         <p className="mx-auto mt-6 max-w-xl font-retro text-xl text-zinc-400 sm:text-2xl">
-          Join the waitlist and get early access, launch-day pricing and a
-          heads-up before the K75 goes public.
+          Join the waitlist and get early access, launch-day pricing and a heads-up before the K75
+          goes public.
         </p>
 
-        {/* Visual-only waitlist form */}
         <div className="mx-auto mt-9 flex max-w-md flex-col items-stretch gap-3 sm:flex-row">
           <input
             type="email"
