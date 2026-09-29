@@ -1,5 +1,6 @@
 import { getStoryblokApi } from "@/lib/storyblok";
 import { StoryblokStory } from "@storyblok/react/rsc";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const storyblokApi = getStoryblokApi();
