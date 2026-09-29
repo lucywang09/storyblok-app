@@ -5,7 +5,7 @@ export const getStoryblokApi = storyblokInit({
   accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
   use: [apiPlugin],
   components: {
-    k75_content: ProductDrop,
+    page: ProductDrop,
   },
   apiOptions: {
     region: "eu",
