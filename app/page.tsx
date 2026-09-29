@@ -10,7 +10,7 @@ import { getStoryblokApi } from "@/lib/storyblok";
 export default async function Home() {
   const storyblokApi = getStoryblokApi();
 
-  const { data } = await storyblokApi.get("cdn/stories/k75-content", {
+  const { data } = await storyblokApi.get("cdn/stories/home", {
     version: "draft",
   });
 
