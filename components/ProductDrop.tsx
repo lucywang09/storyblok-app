@@ -24,13 +24,14 @@ export default function ProductDrop({ blok }: { blok: any }) {
         <StoryblokServerComponent blok={banner} key={banner._uid} />
       ))}
 
-      <Navbar />
+      <Navbar offset={banners.some((b: any) => b.is_visible)} />
 
       <div {...(k75 ? storyblokEditable(k75) : {})}>
         <Hero
           availability={k75?.availability}
           launchMessage={k75?.launch_message}
           ctaText={k75?.cta_text}
+          imageUrl={k75?.image?.filename}
         />
       </div>
 
