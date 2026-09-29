@@ -1,4 +1,7 @@
-import { storyblokEditable } from "@storyblok/react/rsc";
+import {
+  storyblokEditable,
+  StoryblokServerComponent,
+} from "@storyblok/react/rsc";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -9,12 +12,18 @@ import Footer from "@/components/Footer";
 
 export default function ProductDrop({ blok }: { blok: any }) {
   const k75 = blok.body?.find((b: any) => b.component === "K75 Content");
+  const banners =
+    blok.body?.filter((b: any) => b.component === "announcement_banner") ?? [];
 
   return (
     <main
       className="min-h-screen bg-neutral-950"
       {...storyblokEditable(blok)}
     >
+      {banners.map((banner: any) => (
+        <StoryblokServerComponent blok={banner} key={banner._uid} />
+      ))}
+
       <Navbar />
 
       <div {...(k75 ? storyblokEditable(k75) : {})}>
